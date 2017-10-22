@@ -87,6 +87,8 @@ def target_encode(trn_series=None,
     ft_tst_series.index = tst_series.index
     return add_noise(ft_trn_series, noise_level), add_noise(ft_tst_series, noise_level)
 
+
+#开启垃圾回收机制
 gc.enable()
 
 trn_df = pd.read_csv(origin_dir+"train.csv", index_col=0)
@@ -157,6 +159,7 @@ for n_c, (f1, f2) in enumerate(combs):
 trn_df = trn_df[train_features]
 sub_df = sub_df[train_features]
 
+#针对类别型特征
 f_cats = [f for f in trn_df.columns if "_cat" in f]
 
 for f in f_cats:
@@ -166,6 +169,7 @@ for f in f_cats:
                                          min_samples_leaf=200,
                                          smoothing=10,
                                          noise_level=0)
+print 'features:',trn_df.columns
 
 n_splits = 20
 n_estimators = 200
