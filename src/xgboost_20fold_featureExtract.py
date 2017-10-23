@@ -5,7 +5,6 @@ import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
 from xgboost import XGBClassifier
 from sklearn.model_selection import StratifiedKFold
 import gc
-from numba import jit
 from sklearn.preprocessing import LabelEncoder
 import time 
 
@@ -181,9 +180,12 @@ sub_preds = np.zeros(len(sub_df))
 increase = True
 np.random.seed(0)
 
+print "当前时间戳为:", time.time()
 for fold_, (trn_idx, val_idx) in enumerate(folds.split(target, target)):
     trn_dat, trn_tgt = trn_df.iloc[trn_idx], target.iloc[trn_idx]
     val_dat, val_tgt = trn_df.iloc[val_idx], target.iloc[val_idx]
+
+    print "第"+ str(fold_+1) +"次,当前时间戳为:", time.time()
 
     clf = XGBClassifier(n_estimators=n_estimators,
                         max_depth=4,
@@ -193,8 +195,7 @@ for fold_, (trn_idx, val_idx) in enumerate(folds.split(target, target)):
                         colsample_bytree=.8,
                         gamma=1,
                         reg_alpha=0,
-                        reg_lambda=1,
-                        nthread=2)
+                        reg_lambda=1)
     # Upsample during cross validation to avoid having the same samples
     # in both train and validation sets
     # Validation set is not up-sampled to monitor overfitting
