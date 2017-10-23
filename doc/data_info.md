@@ -20,6 +20,15 @@ train target：
 
 
 
+#[TODO]
+
+1.自定义loss function，参考： http://www.cnblogs.com/silence-gtx/p/5812012.html
+
+2.扩展特征组合
+
+3.DNN做特征变换
+
+
 
 
 
