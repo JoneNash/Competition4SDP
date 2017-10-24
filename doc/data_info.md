@@ -22,11 +22,23 @@ train target：
 
 #[TODO]
 
-1.自定义loss function，参考： http://www.cnblogs.com/silence-gtx/p/5812012.html
+1.自定义loss function，参考： http://www.cnblogs.com/silence-gtx/p/5812012.html  【需要详细研究一下官方评价标准】
+
+xgboost可以定义损失函数和每一步的目标函数
 
 2.扩展特征组合
 
 3.DNN做特征变换
+
+4.正负样本不均衡问题 xgboost 样本权重
+
+5.重采样
+
+6.xgboost模型融合，目前采用求均值的方式；还有一种方式就是每一轮的结果参与下一轮优化（特征），后续可以考虑
+
+
+7.目前对数据的感知还不够，查看总体分布，根据分布确定模型选型
+
 
 
 
