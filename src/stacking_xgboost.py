@@ -1,3 +1,10 @@
+#coding=utf-8
+
+'''
+参考：
+https://www.kaggle.com/yekenot/simple-stacker-lb-0-284
+'''
+
 import pandas as pd
 import numpy as np
 
