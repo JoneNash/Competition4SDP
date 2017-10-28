@@ -229,19 +229,19 @@ log_model = LogisticRegression()
 #         base_models = (lgb_model, lgb_model2, lgb_model3)) 
 
 
-# Stacker score: 
-# stack = Ensemble(n_splits=5,
-#         stacker = log_model,
-#         base_models = (lgb_model, xgb_model))
-
-
-# Stacker score: 
+# Stacker score: 0.64387
 stack = Ensemble(n_splits=5,
         stacker = log_model,
-        base_models = (lgb_model, xgb_weight_model))
+        base_models = (lgb_model, xgb_model))
+
+
+# Stacker score: 0.64115
+# stack = Ensemble(n_splits=5,
+#         stacker = log_model,
+#         base_models = (lgb_model, xgb_weight_model))
 
         
-y_pred = stack.fit_predict(train, target_train, test)        
+# y_pred = stack.fit_predict(train, target_train, test)        
 
 
 
