@@ -1,8 +1,9 @@
 #coding=utf-8
 
 '''
-参考：
-https://www.kaggle.com/yekenot/simple-stacker-lb-0-284
+效果并不好，LB 0.240。
+
+肯定是某个地方出错了...
 '''
 
 import pandas as pd
