@@ -241,7 +241,7 @@ stack = Ensemble(n_splits=5,
 #         base_models = (lgb_model, xgb_weight_model))
 
         
-# y_pred = stack.fit_predict(train, target_train, test)        
+y_pred = stack.fit_predict(train, target_train, test)        
 
 
 
