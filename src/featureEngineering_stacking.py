@@ -201,24 +201,12 @@ ada_model = AdaBoostClassifier()
 log_model = LogisticRegression()
 
 
-# Stacker score:         
+##########    lgb+lgb+lgb     
 stack = Ensemble(n_splits=3,
         stacker = log_model,
         base_models = (lgb_model, lgb_model2, lgb_model3)) 
 
 
-# Stacker score: 
-# stack = Ensemble(n_splits=5,
-#         stacker = log_model,
-#         base_models = (lgb_model, xgb_model))
-
-
-# Stacker score: 
-# stack = Ensemble(n_splits=5,
-#         stacker = log_model,
-#         base_models = (lgb_model, xgb_weight_model))
-
-        
 y_pred = stack.fit_predict(train, target_train, test)        
 
 
@@ -227,3 +215,51 @@ sub = pd.DataFrame()
 sub['id'] = id_test
 sub['target'] = y_pred
 sub.to_csv('stacked_1.csv', index=False)
+
+
+
+##########    lgb+xgb
+stack = Ensemble(n_splits=5,
+        stacker = log_model,
+        base_models = (lgb_model, xgb_model))
+
+y_pred = stack.fit_predict(train, target_train, test)        
+
+
+
+sub = pd.DataFrame()
+sub['id'] = id_test
+sub['target'] = y_pred
+sub.to_csv('stacked_2.csv', index=False)
+
+
+########## lgb_model + xgb_weight_model
+stack = Ensemble(n_splits=5,
+        stacker = log_model,
+        base_models = (lgb_model, xgb_weight_model))
+
+y_pred = stack.fit_predict(train, target_train, test)        
+
+sub = pd.DataFrame()
+sub['id'] = id_test
+sub['target'] = y_pred
+sub.to_csv('stacked_3.csv', index=False)
+
+
+
+#大量模型
+
+stack = Ensemble(n_splits=5,
+        stacker = log_model,
+        base_models = (lgb_model,lgb_model2,lgb_model3,rf_model,et_model,xgb_model,xgb_weight_model,cat_model,rgf_model,gb_model,ada_model))
+
+y_pred = stack.fit_predict(train, target_train, test)        
+
+sub = pd.DataFrame()
+sub['id'] = id_test
+sub['target'] = y_pred
+sub.to_csv('stacked_4.csv', index=False)
+
+
+
+
