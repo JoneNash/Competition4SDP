@@ -202,6 +202,8 @@ log_model = LogisticRegression()
 
 
 ##########    lgb+lgb+lgb     
+#Stacker score: 0.80597
+#LB 0.252
 stack = Ensemble(n_splits=3,
         stacker = log_model,
         base_models = (lgb_model, lgb_model2, lgb_model3)) 
@@ -219,6 +221,7 @@ sub.to_csv('stacked_1.csv', index=False)
 
 
 ##########    lgb+xgb
+#Stacker score: 0.091
 stack = Ensemble(n_splits=5,
         stacker = log_model,
         base_models = (lgb_model, xgb_model))
@@ -234,6 +237,8 @@ sub.to_csv('stacked_2.csv', index=False)
 
 
 ########## lgb_model + xgb_weight_model
+#Stacker score: 0.88562
+#LB 0.125
 stack = Ensemble(n_splits=5,
         stacker = log_model,
         base_models = (lgb_model, xgb_weight_model))
