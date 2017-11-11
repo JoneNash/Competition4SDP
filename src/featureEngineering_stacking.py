@@ -1,9 +1,9 @@
 #coding=utf-8
 
 '''
-效果并不好，LB 0.240。
-
-肯定是某个地方出错了...
+【TODO】
+1.调参
+2.扩展模型组合方式
 '''
 
 import pandas as pd
