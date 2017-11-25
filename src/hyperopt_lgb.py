@@ -114,7 +114,9 @@ def function(args):
 count = 0
 
 parameter_space_lgb ={
-'n_estimators':hp.choice('n_estimators',range(10,101,1))
+    'n_estimators':hp.choice('n_estimators',range(500,1501,1)),
+    'max_features':hp.choice('n_estimators',range(7,14,1)),
+    'n_jobs':-1,
 
 }
 

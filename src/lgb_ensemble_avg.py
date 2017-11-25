@@ -10,6 +10,9 @@
 @site: https://github.com/JoneNash
 @software: PyCharm Community Edition
 @time: 2017/11/25 下午3:57
+
+
+多个lightgbm模型融合
 """
 
 import numpy as np # linear algebra
