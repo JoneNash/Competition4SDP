@@ -35,10 +35,17 @@ concat_df.columns = cols
 # concat_df["target"] = (concat_df.rank() / concat_df.shape[0]).mean(axis=1)
 
 #方法2 》均值
-concat_df["target"] = concat_df.mean(axis=1)
+# concat_df["target"] = concat_df.mean(axis=1)
+
+#方法3 》log之后求平均，再指数变换
+concat_df["target"] = np.exp((np.log(concat_df)).mean(axis=1))
 
 concat_df.drop(cols, axis=1, inplace=True)
 
 
+
 # Write the output
-concat_df.to_csv("/Users/leidelong/competition/Porto_Seguro_Safe_Driver_Prediction/all_kagglemix.csv",index_label="id")
+import time
+localtime = time.asctime( time.localtime(time.time()) )
+concat_df.to_csv("/Users/leidelong/competition/Porto_Seguro_Safe_Driver_Prediction/all_kagglemix"+localtime+".csv.gz",index_label="id",compression = 'gzip')
+
