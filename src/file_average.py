@@ -10,6 +10,13 @@
 @site: https://github.com/JoneNash
 @software: PyCharm Community Edition
 @time: 2017/11/23 下午4:09
+
+
+不同组合方式排名：
+Froza_and_Pascal*2 LB 189
+gpari*2 LB 138
+Froza_and_Pascal*2 gpari*2 LB 109
+Froza_and_Pascal*3 gpari*3 LB 102
 """
 
 
