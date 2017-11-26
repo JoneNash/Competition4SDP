@@ -74,6 +74,13 @@ def gini(actual, pred, cmpcol=0, sortcol=1):
 def gini_normalized(a, p):
     return gini(a, p) / gini(a, a)
 
+def cross_val_score_gini(estimator, X, y):
+    prediction_proba = estimator.predict_proba(X)[:, 1]
+    return gini_normalized(y,prediction_proba)
+
+
+
+
 def function(args):
     print(args)
 
@@ -103,7 +110,12 @@ def function(args):
 
     # score = accuracy_score(y_test, prediction)
     score = gini_normalized(y_test,prediction_proba)
+    # score = cross_val_score(clf, x_train, y_train, cv=5, scoring=gini_normalized).mean()
     print(" %s , test accuracy : " % str(count),score)
+
+
+
+
 
     # # 由于hyperopt仅提供fmin接口，因此如果要求最大值，则需要取相反数
     return -score
@@ -115,7 +127,6 @@ count = 0
 
 parameter_space_lgb ={
     'n_estimators':hp.choice('n_estimators',range(500,1501,1)),
-    'max_features':hp.choice('n_estimators',range(7,14,1)),
     'n_jobs':-1,
 
 }
@@ -141,4 +152,4 @@ prediction_proba = clf.predict_proba(test)[:,1]
 sub = pd.DataFrame()
 sub['id'] = id_test
 sub['target'] = prediction_proba
-sub.to_csv('stacked_1.csv', index=False)
+sub.to_csv('hyperopt_lgb1.csv', index=False)

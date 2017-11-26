@@ -4,7 +4,6 @@
     <list default="true" id="0c3f9202-bb72-4d5a-9855-86babe20bc0a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/hyperopt_lgb.py" afterPath="$PROJECT_DIR$/src/hyperopt_lgb.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lgb_ensemble_avg.py" afterPath="$PROJECT_DIR$/src/lgb_ensemble_avg.py" />
     </list>
     <ignored path="Competition4SDP.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,8 +36,8 @@
       <file leaf-file-name="featureEngineering_stacking.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/featureEngineering_stacking.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
-              <caret line="260" column="53" selection-start-line="260" selection-start-column="53" selection-end-line="260" selection-end-column="53" />
+            <state relative-caret-position="3645">
+              <caret line="256" column="28" selection-start-line="256" selection-start-column="28" selection-end-line="256" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -64,10 +63,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="lgb_ensemble_avg.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="lgb_ensemble_avg.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lgb_ensemble_avg.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1563">
+            <state relative-caret-position="-227">
               <caret line="115" column="37" selection-start-line="115" selection-start-column="37" selection-end-line="115" selection-end-column="37" />
               <folding>
                 <element signature="e#253#288#0" expanded="true" />
@@ -76,14 +75,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="hyperopt_lgb.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="hyperopt_lgb.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/hyperopt_lgb.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="118" column="16" selection-start-line="118" selection-start-column="16" selection-end-line="118" selection-end-column="16" />
+            <state relative-caret-position="164">
+              <caret line="129" column="0" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
               <folding>
                 <element signature="e#297#316#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_validation.py" pinned="false" current-in-tab="false">
+        <entry file="file:///Library/Python/2.7/site-packages/sklearn/model_selection/_validation.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="282">
+              <caret line="313" column="21" selection-start-line="313" selection-start-column="21" selection-end-line="313" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="scorer.py" pinned="false" current-in-tab="false">
+        <entry file="file:///Library/Python/2.7/site-packages/sklearn/metrics/scorer.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-378">
+              <caret line="246" column="4" selection-start-line="246" selection-start-column="4" selection-end-line="246" selection-end-column="4" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -118,8 +137,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="20" />
-    <option name="y" value="23" />
+    <option name="x" value="21" />
+    <option name="y" value="24" />
     <option name="width" value="1419" />
     <option name="height" value="804" />
   </component>
@@ -433,7 +452,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="20" y="23" width="1419" height="804" extended-state="0" />
+    <frame x="21" y="24" width="1419" height="804" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20314735" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -444,7 +463,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32944608" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22157435" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14577259" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.11953353" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13848397" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -602,14 +621,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///Library/Python/2.7/site-packages/sklearn/model_selection/_validation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2940">
-          <caret line="215" column="19" selection-start-line="215" selection-start-column="4" selection-end-line="215" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///Library/Python/2.7/site-packages/sklearn/cross_validation.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="159">
@@ -687,14 +698,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///Library/Python/2.7/site-packages/hyperopt/fmin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-270">
-          <caret line="203" column="35" selection-start-line="203" selection-start-column="26" selection-end-line="203" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/contrast_data_model.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -739,29 +742,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/featureEngineering_stacking.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3645">
+          <caret line="256" column="28" selection-start-line="256" selection-start-column="28" selection-end-line="256" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/model_stacking.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1707">
           <caret line="16" column="51" selection-start-line="16" selection-start-column="51" selection-end-line="16" selection-end-column="51" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/featureEngineering_stacking.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="260" column="53" selection-start-line="260" selection-start-column="53" selection-end-line="260" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hyperopt_lgb.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="118" column="16" selection-start-line="118" selection-start-column="16" selection-end-line="118" selection-end-column="16" />
-          <folding>
-            <element signature="e#297#316#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -775,10 +768,44 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lgb_ensemble_avg.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1563">
+        <state relative-caret-position="-227">
           <caret line="115" column="37" selection-start-line="115" selection-start-column="37" selection-end-line="115" selection-end-column="37" />
           <folding>
             <element signature="e#253#288#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Python/2.7/site-packages/hyperopt/fmin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="203" column="4" selection-start-line="203" selection-start-column="4" selection-end-line="203" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Python/2.7/site-packages/sklearn/model_selection/_validation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="313" column="21" selection-start-line="313" selection-start-column="21" selection-end-line="313" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Python/2.7/site-packages/sklearn/metrics/scorer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-378">
+          <caret line="246" column="4" selection-start-line="246" selection-start-column="4" selection-end-line="246" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hyperopt_lgb.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="129" column="0" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
+          <folding>
+            <element signature="e#297#316#0" expanded="true" />
           </folding>
         </state>
       </provider>
