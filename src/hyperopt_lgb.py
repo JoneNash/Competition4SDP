@@ -1,21 +1,6 @@
 #!/usr/bin/env python
 # encoding: utf-8
 
-
-"""
-@version: ??
-@author: leidelong
-@license: Apache Licence
-@contact: leidl8907@gmail.com
-@site: https://github.com/JoneNash
-@software: PyCharm Community Edition
-@time: 2017/11/25 上午11:48
-"""
-
-
-#coding=utf-8
-# from sklearn.metrics import accuracy_score
-
 import pandas as pd
 import numpy as np
 
@@ -47,7 +32,7 @@ test = test.drop(['id'], axis = 1)
 
 from sklearn.cross_validation import train_test_split
 #x为数据集的feature熟悉，y为label.
-x_train, x_test, y_train, y_test = train_test_split(train, target_train, test_size = 0.2 ,random_state=1)
+# x_train, x_test, y_train, y_test = train_test_split(train, target_train, test_size = 0.2 ,random_state=1)
 
 
 
@@ -88,34 +73,22 @@ def function(args):
     clf =  LGBMClassifier(**args)
 
     lgb_params = {}
-    # lgb_params['n_estimators'] = 10
-    # lgb_params['max_bin'] = 10
-    # lgb_params['subsample'] = 0.8
-    # lgb_params['subsample_freq'] = 10
-    # lgb_params['colsample_bytree'] = 0.8
-    # lgb_params['min_child_samples'] = 500
-    # lgb_params['random_state'] = 99
+    lgb_params['max_bin'] = 10
+    lgb_params['subsample'] = 0.8
+    lgb_params['subsample_freq'] = 10
+    lgb_params['colsample_bytree'] = 0.8
+    lgb_params['min_child_samples'] = 500
+    lgb_params['random_state'] = 99
     lgb_params['n_jobs'] = -1
 
     clf.set_params(**lgb_params)
 
-    # 训练模型
-    clf.fit(x_train,y_train)
-
-    # 预测测试集
-    prediction_proba = clf.predict_proba(x_test)[:,1]
-
     global count
     count = count + 1
 
-    # score = accuracy_score(y_test, prediction)
-    score = gini_normalized(y_test,prediction_proba)
-    # score = cross_val_score(clf, x_train, y_train, cv=5, scoring=gini_normalized).mean()
-    print(" %s , test accuracy : " % str(count),score)
-
-
-
-
+    #添加交叉验证,自定义评价函数
+    score = cross_val_score(clf, train,target_train , cv=5, scoring=cross_val_score_gini).mean()
+    print(" %s , test gini score : " % str(count),score)
 
     # # 由于hyperopt仅提供fmin接口，因此如果要求最大值，则需要取相反数
     return -score
@@ -126,22 +99,19 @@ def function(args):
 count = 0
 
 parameter_space_lgb ={
-    'n_estimators':hp.choice('n_estimators',range(500,1501,1)),
+    'n_estimators':hp.choice('n_estimators',range(200,1501,100)),
+    'num_leaves':hp.choice('num_leaves',range(64,1024,50)),
     'n_jobs':-1,
 
 }
 
-best = fmin(function, parameter_space_lgb, algo=tpe.suggest, max_evals=10)
+best = fmin(function, parameter_space_lgb, algo=tpe.suggest, max_evals=5)
 
 clf = LGBMClassifier(**best)
 print(clf)
 
-
 #验证最优参数效果
-# 训练模型
-clf.fit(x_train,y_train)
-prediction_proba = clf.predict_proba(x_test)[:,1]
-score = gini_normalized(y_test,prediction_proba)
+score = cross_val_score(clf, train,target_train , cv=5, scoring=cross_val_score_gini).mean()
 print(" best params : %s , test accuracy : %s" % (best,score))
 
 
