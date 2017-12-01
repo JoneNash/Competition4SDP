@@ -2,9 +2,33 @@
 
 [Kaggle比赛：Porto Seguro的安全驾驶预测](https://www.kaggle.com/c/porto-seguro-safe-driver-prediction) 代码
 
+## 总结
+
+这次比赛排名不出众，比赛过程中存在以下问题：
+
+* 虽然比赛参与的比较早，但是组队比较晚，分工不明确
+* 异地队员交流起来不太流畅
+* 第一次参赛不懂套路
+* 后期没办法腾出大量时间，发力不足
+
+###方法
+1.在比赛前期花了很多时间放在feature engineering上，构建了200个左右的特征，使用xgboost单模型测试，效果比只是用原始特征要好，但是最后阶段并没有使用这部分特征，造成精力上的浪费。
+
+2.feature engineering中使用了特征空值填充、特征组合、one-hot编码。
+
+3.多模型用平均blending的方法融合。blending时采用了几种方法：
+
+* 直接avg
+* rank之后求均值
+* 取log>均值>exp
+
+4.尝试使用hyperopt对lgb自动调参，scoring设置为赛题组提供的评价方法gini系数，并使用交叉验证。在服务器运行时报错，没有在最终的版本中使用。
+
+5.尝试了KNN，非常慢，时间关系并没有用到最终版本中。转而采用80W测试集在59W训练集中随机采样的方式重新构建训练集。
 
 
-## [1st place](https://www.kaggle.com/c/porto-seguro-safe-driver-prediction/discussion/44629)
+
+## [kaggle 1st place](https://www.kaggle.com/c/porto-seguro-safe-driver-prediction/discussion/44629)
 
 ![](images/1st.result.png)
 6个模型做融合（1x lightgbm, 5x nn）.
@@ -72,3 +96,7 @@ Nonlinear things failed.
 ### what did not work
 
 >upsampling, deeper autoencoders, wider autoencoders, KNNs, KNN on DAE features, nonlinear stacking, some feature engineering (yes, I tried this too), PCA, bagging, factor models (but others had success with it), xgboost (other did well with that) and much much more.
+>
+
+
+##
