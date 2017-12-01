@@ -59,14 +59,14 @@ cv,模型结果做均值
 > 3.Input dropout often improve generalization when training on DAE features. 
 > 
 
-###lightgbm
+### lightgbm
 
 >I tuned params on CV.
 
-###blending
+### blending
 Nonlinear things failed.
 >For me even tuning of linear blending weights failed. So I stick with all w=1.
 
-###what did not work
+### what did not work
 
 upsampling, deeper autoencoders, wider autoencoders, KNNs, KNN on DAE features, nonlinear stacking, some feature engineering (yes, I tried this too), PCA, bagging, factor models (but others had success with it), xgboost (other did well with that) and much much more..
